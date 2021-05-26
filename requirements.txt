@@ -1,0 +1,17 @@
+click==8.0.0
+Flask==2.0.0
+Flask-MySQL==1.5.2
+Flask-MySQLdb==0.2.0
+itsdangerous==2.0.0
+Jinja2==3.0.0
+MarkupSafe==2.0.0
+mysqlclient==2.0.3
+PyMySQL==1.0.2
+Werkzeug==2.0.0
+
+#para activar las libreria de mysql 
+
+#sudo apt install libmysqlclient-dev   
+#sudo apt install libmariadb-dev-compat
+#sudo apt install libmariadbclient-dev 
+#sudo apt-get install python-dev default-libmysqlclient-dev libssl-dev

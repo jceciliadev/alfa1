@@ -1,0 +1,62 @@
+{%extends '/base.html'%}
+{%block container%}
+
+<section class="site-section">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="map-responsive">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3040.4727127324295!2d-3.686042818586818!3d40.35404162638069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4226ea448c6df9%3A0xcf05207bc737604e!2sCalle%20Mar%C3%ADa%20Barrientos%2C%2017%2C%2028021%20Madrid!5e0!3m2!1ses!2ses!4v1622025490714!5m2!1ses!2ses"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div class="row">
+          <form action="#" method="post">
+            <div class="col-md-4 form-group">
+              <label for="name">Nombre</label>
+              <input type="text" id="name" class="form-control ">
+            </div>
+            <div class="col-md-4 form-group">
+              <label for="phone">Apellido</label>
+              <input type="text" id="apelllido" class="form-control ">
+            </div>
+            <div class="col-md-4 form-group">
+              <label for="phone">Telefono</label>
+              <input type="text" id="phone" class="form-control ">
+            </div>
+            <div class="col-md-4 form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" class="form-control ">
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 form-group">
+            <label for="message">Escribe el Mensaje</label>
+            <textarea name="message" id="message" class="form-control " cols="30" rows="8"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 form-group">
+            <input type="submit" value="Enviar Mensaje" class="btn btn-primary">
+          </div>
+        </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END section -->
+
+<section class="section-cover cta" data-stellar-background-ratio="0.5"
+  style="background-image: url(static/images/big_image_2.jpg);">
+  <div class="container">
+    <div class="row justify-content-center align-items-center intro">
+      <div class="col-md-8 text-center element-animate">
+        <h2 class="mb-4"><span>Atreve a verte diferente </span> No pierdas tiempo </h2>
+        <p><a href="#" class="btn btn-black">Pedir cita</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END section -->
+{%endblock %}
