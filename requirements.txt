@@ -14,4 +14,5 @@ Werkzeug==2.0.0
 #sudo apt install libmysqlclient-dev   
 #sudo apt install libmariadb-dev-compat
 #sudo apt install libmariadbclient-dev 
+#sudo apt install libmariadbclient-dev 
 #sudo apt-get install python-dev default-libmysqlclient-dev libssl-dev
