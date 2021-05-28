@@ -1,13 +1,16 @@
 from types import MethodDescriptorType
 from flask import Flask,render_template,config,request,redirect,url_for,flash,jsonify
-from flask.templating import render_template_string
 from flask_mysqldb import MySQL
 
-app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__)
+@app.route("/<path:path>")
+def static_file(path):
+    return app.send_static_file(path)
+
 #configurar DB mysql
 app.config["MYSQL_HOST"] = "localhost"
-app.config["MYSQL_USER"] = "barber"
-app.config["MYSQL_PASSWORD"] = "Password123$"
+app.config["MYSQL_USER"] = "root"
+app.config["MYSQL_PASSWORD"] = "password"
 app.config["MYSQL_DB"] = "shop_barber"
 mysql = MySQL(app)
 app.secret_key = ""
@@ -44,18 +47,28 @@ def about():
 
 @app.route("/contact",methods =["POST", "GET"])
 def contact():
-    return render_template("contact.html")
+    return render_template("/contact.html")
     
 
 @app.route("/add_contact",methods=['GET',"POS"])
-def Concertar_Cita():
-    if request.method == " POST":
+def  Concertar_Cita():
+    if request.method == " POST ":
         nombre= request.form['nombre']
-        apellido= request.form['apellido']
-        telefono=request.form['telefono']
-        email=request.form['email']
-        
-    return render_template("/add_contact.html")
+        Apellido= request.form['Apellido']
+        email=request.form["email"]
+        phone=request.form["phone"]
+        print(nombre)
+        print(Apellido)
+        print(email)
+        print(phone)
+        cur= mysql.connection.cursor()
+        cur.execute("INSERT INTO Usuarios(nombre,Apellido,email,phone) VALUES (%s,%s,%s,%s)",(nombre,Apellido,email,phone))
+        mysql.connection.commit()
+        flash("Contacto agregado satisfatoriaamente")
+        return redirect(url_for("/index"))
+    else:
+        return 'Error al agregar usuario'
+ 
 
 
 	
@@ -64,3 +77,7 @@ def Concertar_Cita():
 
 if __name__ == "__main__":
     app.run( port=3000,debug=True)
+    
+    
+    
+    # mysql -u root -p

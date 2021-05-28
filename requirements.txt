@@ -8,6 +8,8 @@ MarkupSafe==2.0.0
 mysqlclient==2.0.3
 PyMySQL==1.0.2
 Werkzeug==2.0.0
+pkg-resources==0.0.0
+Flask-Script==2.0.6
 
 #para activar las libreria de mysql 
 
